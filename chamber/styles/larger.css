@@ -1,0 +1,73 @@
+/* =============================================================
+   larger.css  –  Abuja Chamber of Commerce
+   Breakpoints: 600px (tablet), 900px (desktop)
+   ============================================================= */
+
+@media only screen and (min-width: 600px) {
+  /* Header: single row */
+  .header-inner { flex-wrap: nowrap; }
+  .hamburger { display: none; }
+
+  #main-nav {
+    width: auto;
+    max-height: none !important;
+    overflow: visible;
+    order: 0;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #main-nav ul {
+    flex-direction: row;
+    border-top: none;
+    padding: 0;
+    gap: 0.15rem;
+    align-items: center;
+  }
+  #main-nav a {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+  }
+  #main-nav a.active {
+    background: rgba(200,169,81,0.2);
+  }
+  #main-nav a.active::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: var(--secondary);
+    border-radius: 2px;
+    position: absolute;
+    bottom: 2px;
+    left: 0.85rem;
+    right: 0.85rem;
+  }
+
+  /* Cards: 2 columns on tablet */
+  #member-container:not(.list-view) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer: row layout */
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .footer-contact { flex: 1; min-width: 200px; }
+  .footer-middle { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .footer-dev { text-align: right; }
+}
+
+@media only screen and (min-width: 900px) {
+  main { padding: 2.5rem 2rem 4rem; }
+
+  /* Cards: 3 columns on desktop */
+  #member-container:not(.list-view) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-name { font-size: 1.2rem; }
+}

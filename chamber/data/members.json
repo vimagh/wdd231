@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Abuja Textile Hub",
+    "tagline": "Fabric, fashion & forward thinking",
+    "address": "14 Wuse Zone 4, Abuja, FCT",
+    "phone": "+234 809 123 4567",
+    "website": "https://abujtextilehub.ng",
+    "image": "images/textile.jpg",
+    "membership": 3,
+    "industry": "Retail & Fashion"
+  },
+  {
+    "name": "Capital Tech Solutions",
+    "tagline": "Powering Abuja's digital future",
+    "address": "Plot 22 Maitama District, Abuja, FCT",
+    "phone": "+234 803 456 7890",
+    "website": "https://capitaltechsolutions.ng",
+    "image": "images/tech.jpg",
+    "membership": 3,
+    "industry": "Information Technology"
+  },
+  {
+    "name": "Garki Fresh Markets",
+    "tagline": "Farm to table, every day",
+    "address": "Garki Area 10, Abuja, FCT",
+    "phone": "+234 701 234 5678",
+    "website": "https://garkifresh.ng",
+    "image": "images/market.jpg",
+    "membership": 2,
+    "industry": "Food & Agriculture"
+  },
+  {
+    "name": "Millennium Consulting Group",
+    "tagline": "Strategy, growth, results",
+    "address": "5 Aguiyi Ironsi St, Maitama, Abuja",
+    "phone": "+234 812 987 6543",
+    "website": "https://millenniumcg.ng",
+    "image": "images/consulting.jpg",
+    "membership": 3,
+    "industry": "Business Consulting"
+  },
+  {
+    "name": "Kubwa Construction Ltd",
+    "tagline": "Building Abuja's tomorrow",
+    "address": "Kubwa Phase 4, Abuja, FCT",
+    "phone": "+234 706 543 2109",
+    "website": "https://kubwaconstruct.ng",
+    "image": "images/construction.jpg",
+    "membership": 2,
+    "industry": "Construction"
+  },
+  {
+    "name": "Central Logistics Nigeria",
+    "tagline": "On time, every time",
+    "address": "Airport Road, Lugbe, Abuja, FCT",
+    "phone": "+234 815 678 9012",
+    "website": "https://centrallogisticsng.com",
+    "image": "images/logistics.jpg",
+    "membership": 2,
+    "industry": "Logistics & Transport"
+  },
+  {
+    "name": "Heritage Bank & Trust",
+    "tagline": "Your wealth, our priority",
+    "address": "Plot 1 Central Business District, Abuja",
+    "phone": "+234 700 111 2233",
+    "website": "https://heritagebankng.com",
+    "image": "images/bank.jpg",
+    "membership": 3,
+    "industry": "Financial Services"
+  },
+  {
+    "name": "Sunrise Academy",
+    "tagline": "Educating leaders of tomorrow",
+    "address": "12 Asokoro Extension, Abuja, FCT",
+    "phone": "+234 808 334 4556",
+    "website": "https://sunriseacademy.ng",
+    "image": "images/education.jpg",
+    "membership": 1,
+    "industry": "Education"
+  }
+]
