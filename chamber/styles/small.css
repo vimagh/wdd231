@@ -6,9 +6,6 @@
    Text:       #1C1C1C
    Font:       Playfair Display + Lato
    ============================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap');
-
 :root {
   --primary:       #006B3F;
   --primary-dark:  #004d2c;
