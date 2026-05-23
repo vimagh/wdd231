@@ -148,7 +148,7 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../images/hero-abuja.png') center/cover no-repeat;
+  background: url('../images/hero-abuja.webp') center/cover no-repeat;
   opacity: 0.18;
 }
 
@@ -164,6 +164,15 @@ header {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   color: rgba(255,255,255,0.9);
+}
+
+.hero-tagline {
+  font-family: var(--ff-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
 }
 
 .btn-cta {
@@ -296,6 +305,10 @@ main {
 #weather-widget .error {
   color: rgba(255,255,255,0.7);
   font-size: 0.9rem;
+}
+
+.weather-loading {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ---------- Spotlights Section ---------- */
