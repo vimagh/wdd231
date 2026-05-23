@@ -1,8 +1,9 @@
-// =====================================================
-//  chamber.js  –  Abuja Chamber of Commerce
-// =====================================================
+/* =====================================================
+   Abuja Chamber of Commerce — home.js
+   Author: Vimagh Solomon
+   ===================================================== */
 
-// ---- Hamburger Menu ----
+// ── 1. Hamburger Menu ──────────────────────────────────
 function initMenu() {
   const btn = document.getElementById('menu-btn');
   const nav = document.getElementById('main-nav');
@@ -10,117 +11,145 @@ function initMenu() {
 
   btn.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  document.addEventListener('click', e => {
-    if (!btn.contains(e.target) && !nav.contains(e.target)) {
-      nav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
+    btn.setAttribute('aria-expanded', isOpen);
   });
 }
 
-// ---- Footer: Year & Last Modified ----
+// ── 2. Footer: copyright year & last modified ──────────
 function initFooter() {
-  const yearEl = document.getElementById('copy-year');
-  const modEl  = document.getElementById('lastModified');
+  const yearEl = document.getElementById('copyright-year');
+  const modEl  = document.getElementById('last-modified');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-  if (modEl)  modEl.textContent  = `Last Modification: ${document.lastModified}`;
+  if (modEl)  modEl.textContent  = document.lastModified;
 }
 
-// ---- Membership level helpers ----
-function levelName(n) {
-  if (n === 3) return 'Gold';
-  if (n === 2) return 'Silver';
-  return 'Member';
-}
-function levelClass(n) {
-  if (n === 3) return 'gold';
-  if (n === 2) return 'silver';
-  return 'member';
-}
-function badgeClass(n) {
-  if (n === 3) return 'badge-gold';
-  if (n === 2) return 'badge-silver';
-  return 'badge-member';
-}
+// ── 3. Weather — OpenWeatherMap ────────────────────────
+// Abuja coordinates: 9.0579° N, 7.4951° E
+const LAT  = 9.0579;
+const LON  = 7.4951;
+// ⚠️  Replace with your actual OWM API key:
+const OWM_KEY = '1348f5c6e79ae3c88bb4169a21b33e49';
 
-// ---- Build a single card (grid view) ----
-function buildCard(m) {
-  const card = document.createElement('div');
-  card.className = `member-card ${levelClass(m.membership)}`;
+const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  card.innerHTML = `
-    <div class="card-img-wrap">
-      <img src="${m.image}" alt="${m.name} business photo" loading="lazy"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="card-img-placeholder" style="display:none">🏢</div>
-    </div>
-    <div class="card-body">
-      <p class="card-name">${m.name}</p>
-      <p class="card-tagline">${m.tagline}</p>
-      <p class="card-detail"><strong>Address:</strong> ${m.address}</p>
-      <p class="card-detail"><strong>Phone:</strong> ${m.phone}</p>
-      <p class="card-detail"><strong>Web:</strong>
-        <a href="${m.website}" target="_blank" rel="noopener noreferrer">${m.website.replace('https://','')}</a>
-      </p>
-      <p class="card-detail"><strong>Industry:</strong> ${m.industry}</p>
-      <div class="card-badge">
-        <span class="badge-pill ${badgeClass(m.membership)}">${levelName(m.membership)}</span>
-      </div>
-    </div>
-  `;
-  return card;
-}
+async function initWeather() {
+  const widget = document.getElementById('weather-widget');
+  if (!widget) return;
 
-// ---- Render members ----
-function renderMembers(members) {
-  const container = document.getElementById('member-container');
-  if (!container) return;
-  container.innerHTML = '';
-  members.forEach(m => container.appendChild(buildCard(m)));
-}
-
-// ---- Fetch & init directory ----
-async function initDirectory() {
-  const container = document.getElementById('member-container');
-  if (!container) return;   // not on directory page
+  // Guard: no real key yet
+  if (OWM_KEY === 'YOUR_OWM_API_KEY_HERE') {
+    widget.innerHTML = `
+      <p class="error">⚠️ Add your OpenWeatherMap API key in <code>home.js</code> to display live weather.</p>`;
+    return;
+  }
 
   try {
-    const response = await fetch('data/members.json');
-    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-    const members = await response.json();
+    // Current weather
+    const curRes = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&appid=${OWM_KEY}`
+    );
+    if (!curRes.ok) throw new Error('Weather fetch failed');
+    const cur = await curRes.json();
 
-    renderMembers(members);
+    // 5-day / 3-hour forecast
+    const fcRes = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${LAT}&lon=${LON}&units=metric&cnt=24&appid=${OWM_KEY}`
+    );
+    if (!fcRes.ok) throw new Error('Forecast fetch failed');
+    const fcData = await fcRes.json();
 
-    // View toggle buttons
-    const gridBtn = document.getElementById('btn-grid');
-    const listBtn = document.getElementById('btn-list');
+    // Pull one reading per day (noon-ish) for next 3 days
+    const today = new Date().getDate();
+    const seen  = new Set();
+    const days  = [];
 
-    gridBtn?.addEventListener('click', () => {
-      container.classList.remove('list-view');
-      gridBtn.classList.add('active');
-      listBtn.classList.remove('active');
-    });
+    for (const item of fcData.list) {
+      const d = new Date(item.dt * 1000);
+      const dateKey = d.toDateString();
+      if (d.getDate() === today) continue;          // skip today
+      if (seen.has(dateKey)) continue;
+      seen.add(dateKey);
+      days.push({ label: DAY_NAMES[d.getDay()], temp: Math.round(item.main.temp), desc: item.weather[0].description });
+      if (days.length === 3) break;
+    }
 
-    listBtn?.addEventListener('click', () => {
-      container.classList.add('list-view');
-      listBtn.classList.add('active');
-      gridBtn.classList.remove('active');
-    });
+    const forecastHTML = days.map(d => `
+      <div class="forecast-day">
+        <div class="day-label">${d.label}</div>
+        <div class="day-temp">${d.temp}°C</div>
+        <div class="day-desc">${d.desc}</div>
+      </div>`).join('');
+
+    widget.innerHTML = `
+      <div class="weather-current">
+        <div>
+          <div class="weather-temp">${Math.round(cur.main.temp)}°C</div>
+          <div class="weather-desc">${cur.weather[0].description}</div>
+          <div class="weather-location">📍 Abuja, FCT, Nigeria</div>
+        </div>
+        <img src="https://openweathermap.org/img/wn/${cur.weather[0].icon}@2x.png"
+             alt="${cur.weather[0].description}" width="64" height="64">
+      </div>
+      <div class="forecast-title">3-Day Forecast</div>
+      <div class="forecast-grid">${forecastHTML}</div>`;
 
   } catch (err) {
-    console.error('Failed to load members:', err);
-    container.innerHTML = '<p style="color:red;padding:1rem">Could not load member data. Please try again later.</p>';
+    widget.innerHTML = `<p class="error">Unable to load weather data. Please try again later.</p>`;
+    console.error('Weather error:', err);
   }
 }
 
-// ---- Init ----
+// ── 4. Spotlights — fetch members.json ────────────────
+const MEMBERSHIP = { 1: 'Member', 2: 'Silver', 3: 'Gold' };
+
+function shuffle(arr) {
+  // Fisher-Yates shuffle
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+async function initSpotlights() {
+  const container = document.getElementById('spotlight-container');
+  if (!container) return;
+
+  try {
+    const res  = await fetch('data/members.json');
+    if (!res.ok) throw new Error('Members fetch failed');
+    const data = await res.json();
+
+    // Filter gold (3) and silver (2) members, then randomly pick 2–3
+    const eligible = data.members.filter(m => m.membershipLevel >= 2);
+    shuffle(eligible);
+    const picks = eligible.slice(0, 3);   // show up to 3
+
+    container.innerHTML = picks.map(m => {
+      const levelLabel = MEMBERSHIP[m.membershipLevel];
+      const badgeClass = m.membershipLevel === 3 ? 'badge-gold' : 'badge-silver';
+      return `
+        <div class="spotlight-card">
+          <img src="${m.image}" alt="${m.name} logo" loading="lazy"
+               onerror="this.src='images/placeholder.webp'">
+          <h3>${m.name}</h3>
+          <span class="badge ${badgeClass}">${levelLabel} Member</span>
+          <p>${m.phone}</p>
+          <p>${m.address}</p>
+          <a href="${m.website}" target="_blank" rel="noopener noreferrer">${m.website.replace('https://', '')}</a>
+        </div>`;
+    }).join('');
+
+  } catch (err) {
+    container.innerHTML = '<p>Unable to load spotlight members.</p>';
+    console.error('Spotlight error:', err);
+  }
+}
+
+// ── Init ───────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initMenu();
   initFooter();
-  initDirectory();
+  initWeather();
+  initSpotlights();
 });
