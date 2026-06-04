@@ -101,3 +101,41 @@
     flex-wrap: wrap;
   }
 }
+
+/* =====================================================
+   JOIN PAGE — larger screen layout
+   ===================================================== */
+
+/* 900px+: form left, membership cards right */
+@media (min-width: 900px) {
+
+  .join-main {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* Override the index page grid for join-main */
+  .join-main.join-main {
+    display: block;
+  }
+
+  .join-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .form-section {
+    flex: 2;
+    min-width: 0;
+  }
+
+  .membership-cards {
+    flex: 1;
+    min-width: 260px;
+    position: sticky;
+    top: 1.5rem;
+  }
+}
