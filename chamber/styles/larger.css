@@ -34,19 +34,23 @@
   .hero p  { font-size: 1.2rem; max-width: 580px; margin-inline: auto; }
 }
 
-/* ---------- 768px: Two-column main grid ---------- */
+/* ---------- 768px: Two-column main grid (index page) ---------- */
 @media (min-width: 768px) {
 
   main {
     max-width: 1100px;
     margin-inline: auto;
     padding: 2rem 1.5rem;
-
-    /* Two-column grid for main content */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 2rem;
+  }
+
+  /* Override grid for discover and join pages */
+  main.discover-main,
+  main.join-main {
+    display: block;
   }
 
   /* Spotlights span full width */
@@ -54,7 +58,6 @@
     grid-column: 1 / -1;
   }
 
-  /* Spotlights cards: row of 2-3 */
   #spotlight-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -65,7 +68,6 @@
     max-width: 340px;
   }
 
-  /* Events cards side by side */
   .events-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -75,7 +77,7 @@
   .event-card { margin-bottom: 0; }
 }
 
-/* ---------- 1024px: Three-column layout ---------- */
+/* ---------- 1024px: Three-column layout (index page) ---------- */
 @media (min-width: 1024px) {
 
   main {
@@ -83,13 +85,17 @@
     padding: 2.5rem 2rem;
   }
 
-  .events-section  { grid-column: 1 / 2; }
-  .weather-section { grid-column: 2 / 3; }
-  .spotlights-section {
-    grid-column: 1 / -1;
+  /* Override grid for discover and join pages */
+  main.discover-main,
+  main.join-main {
+    display: block;
+    padding: 2.5rem 2rem;
   }
 
-  /* Three spotlight cards */
+  .events-section  { grid-column: 1 / 2; }
+  .weather-section { grid-column: 2 / 3; }
+  .spotlights-section { grid-column: 1 / -1; }
+
   .spotlight-card { flex: 1 1 220px; }
 
   .site-name { font-size: 1.15rem; }
@@ -103,21 +109,14 @@
 }
 
 /* =====================================================
-   JOIN PAGE — larger screen layout
+   JOIN PAGE — larger screen layout (900px+)
    ===================================================== */
-
-/* 900px+: form left, membership cards right */
 @media (min-width: 900px) {
 
   .join-main {
     max-width: 1100px;
     margin-inline: auto;
     padding: 2rem 1.5rem;
-  }
-
-  /* Override the index page grid for join-main */
-  .join-main.join-main {
-    display: block;
   }
 
   .join-layout {
@@ -137,5 +136,149 @@
     min-width: 260px;
     position: sticky;
     top: 1.5rem;
+  }
+}
+
+/* =====================================================
+   DISCOVER PAGE — medium screens (641px–1024px)
+   Named grid areas: 2 columns
+   card1 and card8 span full width (featured)
+   ===================================================== */
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  .discover-main {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card1 card1"
+      "card2 card3"
+      "card4 card5"
+      "card6 card7"
+      "card8 card8";
+  }
+
+  /* Spanning cards — horizontal layout */
+  .card1,
+  .card8 {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .card1 figure,
+  .card8 figure {
+    width: 45%;
+    flex-shrink: 0;
+    aspect-ratio: unset;
+    min-height: 200px;
+  }
+
+  .card1 figure img,
+  .card8 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card1 h2, .card1 address, .card1 p, .card1 .btn-learn-more,
+  .card8 h2, .card8 address, .card8 p, .card8 .btn-learn-more {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Hover effect — medium screens and up ONLY */
+  .attraction-card figure img {
+    transition: transform 0.35s ease, filter 0.35s ease;
+  }
+
+  .attraction-card figure img:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1) saturate(1.2);
+  }
+}
+
+/* =====================================================
+   DISCOVER PAGE — large screens (1025px+)
+   Named grid areas: 3 columns, genuinely different layout
+   card1 spans 2 cols, card2 spans 2 rows (tall right)
+   card7 spans 2 rows (tall right), card8 spans 2 cols
+   ===================================================== */
+@media (min-width: 1025px) {
+
+  .discover-main {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 2.5rem 2rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "card1 card1 card2"
+      "card3 card4 card2"
+      "card5 card6 card7"
+      "card8 card8 card7";
+  }
+
+  /* Tall spanning cards (card2, card7) fill their height */
+  .card2,
+  .card7 {
+    flex-direction: column;
+  }
+
+  .card2 figure,
+  .card7 figure {
+    aspect-ratio: unset;
+    flex: 1;
+    min-height: 200px;
+  }
+
+  .card2 figure img,
+  .card7 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Wide spanning cards — horizontal layout */
+  .card1,
+  .card8 {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .card1 figure,
+  .card8 figure {
+    width: 45%;
+    flex-shrink: 0;
+    aspect-ratio: unset;
+    min-height: 220px;
+  }
+
+  .card1 figure img,
+  .card8 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card1 h2, .card1 address, .card1 p, .card1 .btn-learn-more,
+  .card8 h2, .card8 address, .card8 p, .card8 .btn-learn-more {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Hover effect — large screens */
+  .attraction-card figure img {
+    transition: transform 0.35s ease, filter 0.35s ease;
+  }
+
+  .attraction-card figure img:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1) saturate(1.2);
   }
 }
