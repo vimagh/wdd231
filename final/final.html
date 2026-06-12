@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GatherFaith – Site Plan</title>
+  <meta name="description" content="Site plan document for GatherFaith, a faith-based events discovery platform for Christian singles." />
+  <meta name="author" content="Vims" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-forest: #1B5E42;
+      --color-forest-light: #2E7D5A;
+      --color-forest-pale: #E8F4EE;
+      --color-gold: #C49A3C;
+      --color-gold-light: #F5E6C0;
+      --color-cream: #FAF8F3;
+      --color-ink: #1C1C1C;
+      --color-muted: #5A5A5A;
+      --color-border: #D9E8DF;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Nunito', sans-serif;
+      --radius: 8px;
+      --max-width: 860px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-cream);
+      color: var(--color-ink);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    header {
+      background-color: var(--color-forest);
+      color: white;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+
+    header .site-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 em {
+      color: var(--color-gold);
+      font-style: italic;
+    }
+
+    header p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* ── Section card ── */
+    .section {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-number {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .section h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-forest);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section p {
+      color: var(--color-muted);
+      font-size: 15px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Site name highlight ── */
+    .site-name-display {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-forest);
+      background: var(--color-forest-pale);
+      border-left: 3px solid var(--color-forest);
+      padding: 0.4rem 1rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 1rem;
+    }
+
+    .domain {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--color-muted);
+      background: var(--color-cream);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.35rem 0.85rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Scenarios ── */
+    .scenario-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .scenario-list li {
+      background: var(--color-forest-pale);
+      border-left: 3px solid var(--color-forest-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 0.75rem 1rem;
+      font-size: 15px;
+      color: var(--color-ink);
+      font-style: italic;
+    }
+
+    /* ── Color scheme swatches ── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .swatch {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+
+    .swatch-block {
+      height: 72px;
+    }
+
+    .swatch-info {
+      padding: 0.6rem 0.85rem;
+      background: white;
+    }
+
+    .swatch-info strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-ink);
+      margin-bottom: 2px;
+    }
+
+    .swatch-info span {
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    /* ── Typography samples ── */
+    .type-sample {
+      background: var(--color-cream);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .type-sample:last-child { margin-bottom: 0; }
+
+    .type-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .type-display-example {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--color-forest);
+      line-height: 1.2;
+    }
+
+    .type-body-example {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--color-muted);
+      line-height: 1.75;
+    }
+
+    .type-detail {
+      font-size: 12px;
+      color: var(--color-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ── Wireframes ── */
+    .wireframe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .wireframe-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .wireframe-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    .wireframe-device {
+      background: #f0f0f0;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 8px;
+      width: 100%;
+    }
+
+    .wireframe-device.mobile {
+      max-width: 200px;
+    }
+
+    .wireframe-inner {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 6px;
+    }
+
+    .wf-block {
+      background: var(--color-forest-pale);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: var(--color-forest);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .wf-header { height: 32px; background: var(--color-forest); color: white; border-color: var(--color-forest); }
+    .wf-hero { height: 70px; background: var(--color-forest-pale); }
+    .wf-search { height: 24px; background: white; border-color: #ccc; }
+    .wf-card { height: 50px; }
+    .wf-cards { display: grid; gap: 4px; }
+    .wf-cards.two { grid-template-columns: 1fr 1fr; }
+    .wf-cards.three { grid-template-columns: 1fr 1fr 1fr; }
+    .wf-footer { height: 28px; background: #e0e0e0; border-color: #ccc; color: var(--color-muted); }
+    .wf-nav-mobile { height: 20px; background: #e8f4ee; }
+    .wf-text { height: 36px; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--color-forest);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      font-size: 13px;
+      padding: 1.5rem 1rem;
+    }
+
+    footer strong { color: white; }
+
+    @media (max-width: 600px) {
+      .section { padding: 1.5rem 1.25rem; }
+      header { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="site-label">Website Site Plan</p>
+  <h1>Gather<em>Faith</em></h1>
+  <p>A faith-based events discovery platform for Christian singles</p>
+</header>
+
+<main>
+
+  <!-- 1. Site Name -->
+  <section class="section" aria-labelledby="section-name">
+    <p class="section-number">Section 01</p>
+    <h2 id="section-name">Site Name</h2>
+    <div class="site-name-display">GatherFaith</div>
+    <p>The name <strong>GatherFaith</strong> was chosen because it captures the two core purposes of the platform: bringing people together (<em>gather</em>) around a shared Christian faith (<em>faith</em>). The word "gather" evokes community, warmth, and intentional connection — themes central to both the Christian tradition and the lived experience of singles seeking meaningful relationships and community. The combined word is short, memorable, and immediately communicates the site's mission.</p>
+    <p class="domain">Suggested domain: <strong>gatherfaith.org</strong></p>
+  </section>
+
+  <!-- 2. Site Purpose -->
+  <section class="section" aria-labelledby="section-purpose">
+    <p class="section-number">Section 02</p>
+    <h2 id="section-purpose">Site Purpose</h2>
+    <p>GatherFaith is a nationwide events discovery platform designed specifically for Christian singles. The site provides a searchable, map-enabled directory of faith-based events — including retreats, worship nights, singles conferences, social mixers, and community service days — hosted by churches and ministries across the country. Visitors can search by location, date, and event type; churches and organizers can submit their own listings; and registered users can save favorites, set preferences, and subscribe to a weekly regional newsletter. The site also features a community stories section, where users share how faith-based events helped them find genuine connection.</p>
+  </section>
+
+  <!-- 3. Scenarios -->
+  <section class="section" aria-labelledby="section-scenarios">
+    <p class="section-number">Section 03</p>
+    <h2 id="section-scenarios">Scenarios</h2>
+    <p>The following questions represent the kinds of things a typical GatherFaith visitor — a Christian single seeking community or connection — would come to the site to answer:</p>
+    <ul class="scenario-list">
+      <li>"Are there any Christian singles retreats or conferences happening near me this month that I can register for?"</li>
+      <li>"I'm visiting Abuja next weekend — are there any worship nights or faith-based social events I can attend while I'm there?"</li>
+      <li>"I lead a singles ministry at my church. How can I get our upcoming events listed so other Christian singles in the area can find us?"</li>
+    </ul>
+  </section>
+
+  <!-- 4. Color Scheme -->
+  <section class="section" aria-labelledby="section-colors">
+    <p class="section-number">Section 04</p>
+    <h2 id="section-colors">Color Scheme</h2>
+    <p>The color palette draws from nature and faith — deep forest green for trust and growth, warm gold for warmth and hope, and soft cream for readability and calm. Together they communicate a welcoming, grounded, and reverent identity.</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-block" style="background:#1B5E42;"></div>
+        <div class="swatch-info">
+          <strong>Forest Green — #1B5E42</strong>
+          <span>Primary color. Used for the header, nav background, buttons, and headings. Conveys faith, growth, and stability.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#C49A3C;"></div>
+        <div class="swatch-info">
+          <strong>Warm Gold — #C49A3C</strong>
+          <span>Accent color. Used for highlights, section labels, links, and call-to-action accents. Conveys warmth and hope.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#E8F4EE;"></div>
+        <div class="swatch-info">
+          <strong>Pale Green — #E8F4EE</strong>
+          <span>Supporting color. Used for card backgrounds, highlighted quotes, and subtle section fills.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#FAF8F3;"></div>
+        <div class="swatch-info">
+          <strong>Cream — #FAF8F3</strong>
+          <span>Page background. Provides a soft, warm, and readable surface for all content.</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#1C1C1C;"></div>
+        <div class="swatch-info">
+          <strong>Ink — #1C1C1C</strong>
+          <span>Body text and headings on light backgrounds. High contrast for readability and accessibility.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Typography -->
+  <section class="section" aria-labelledby="section-typography">
+    <p class="section-number">Section 05</p>
+    <h2 id="section-typography">Typography</h2>
+    <p>Two fonts are used throughout the site, each serving a distinct role. Together they balance warmth and readability with elegance and character.</p>
+
+    <div class="type-sample">
+      <p class="type-label">Display Font — Cormorant Garamond</p>
+      <p class="type-display-example">Find Your People. Find Your Faith.</p>
+      <p class="type-detail">Used for: page headings (h1, h2), hero text, and section titles. A refined serif that communicates tradition, warmth, and spiritual depth. Applied at sizes ranging from 1.5rem to 3rem.</p>
+    </div>
+
+    <div class="type-sample">
+      <p class="type-label">Body Font — Nunito</p>
+      <p class="type-body-example">GatherFaith helps Christian singles discover faith-based events across the country — retreats, worship nights, conferences, and community gatherings all in one place.</p>
+      <p class="type-detail">Used for: body text, navigation links, labels, captions, form fields, and UI elements. A rounded humanist sans-serif that is highly legible, friendly, and approachable. Applied at 14px–16px for body copy.</p>
+    </div>
+  </section>
+
+  <!-- 6. Wireframes -->
+  <section class="section" aria-labelledby="section-wireframes">
+    <p class="section-number">Section 06</p>
+    <h2 id="section-wireframes">Wireframe — Home Page</h2>
+    <p>The wireframes below represent the structural layout of the GatherFaith home page in mobile and desktop views. Shaded blocks represent content regions — not final visual design.</p>
+
+    <div class="wireframe-grid">
+
+      <!-- Mobile wireframe -->
+      <div class="wireframe-wrap">
+        <p class="wireframe-label">Mobile (320px)</p>
+        <div class="wireframe-device mobile">
+          <div class="wireframe-inner">
+            <div class="wf-block wf-header">Header / Logo</div>
+            <div class="wf-block wf-nav-mobile">☰ Hamburger Nav</div>
+            <div class="wf-block wf-hero">Hero — Tagline + CTA Button</div>
+            <div class="wf-block wf-search">Search / Filter Bar</div>
+            <div class="wf-block wf-text">Intro text</div>
+            <div class="wf-cards">
+              <div class="wf-block wf-card">Event Card</div>
+              <div class="wf-block wf-card">Event Card</div>
+              <div class="wf-block wf-card">Event Card</div>
+            </div>
+            <div class="wf-block wf-card" style="height:36px;">Submit Event CTA</div>
+            <div class="wf-block wf-footer">Footer</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop wireframe -->
+      <div class="wireframe-wrap">
+        <p class="wireframe-label">Desktop / Tablet (768px+)</p>
+        <div class="wireframe-device">
+          <div class="wireframe-inner">
+            <div class="wf-block wf-header" style="display:grid;grid-template-columns:auto 1fr;gap:4px;align-items:center;padding:0 8px;">
+              <span>Logo</span>
+              <span style="text-align:right;font-size:8px;">Nav: Home · Events · About</span>
+            </div>
+            <div class="wf-block wf-hero" style="height:90px;">Hero — Full-width banner with tagline and search bar</div>
+            <div class="wf-block wf-text" style="height:24px;">Featured events heading</div>
+            <div class="wf-cards three">
+              <div class="wf-block wf-card">Event Card</div>
+              <div class="wf-block wf-card">Event Card</div>
+              <div class="wf-block wf-card">Event Card</div>
+            </div>
+            <div class="wf-cards three">
+              <div class="wf-block wf-card">Event Card</div>
+              <div class="wf-block wf-card">Event Card</div>
+              <div class="wf-block wf-card">Event Card</div>
+            </div>
+            <div class="wf-cards two">
+              <div class="wf-block wf-card" style="height:36px; background:#f5e6c0; border-color:#c49a3c; color:#7a5c1a;">Submit an Event</div>
+              <div class="wf-block wf-card" style="height:36px;">Newsletter signup</div>
+            </div>
+            <div class="wf-block wf-footer">Footer — Links · Social · Copyright</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>GatherFaith</strong> — Site Plan Document &nbsp;|&nbsp; Web Development Project</p>
+</footer>
+
+</body>
+</html>
