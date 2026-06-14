@@ -9,7 +9,7 @@
     "state": "NC",
     "description": "A weekend retreat for Christian singles to reconnect with God and find authentic community in the mountains. Includes worship sessions, small group discussions, hiking, and evening bonfires.",
     "organizer": "Crossroads Community Church",
-    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=70",
+    "image": "images/event-retreat.jpg",
     "seats": 60,
     "price": "$149",
     "featured": true
@@ -24,7 +24,7 @@
     "state": "GA",
     "description": "A two-day conference bringing together Christian singles from across the Southeast for powerful worship, inspiring speakers, and intentional networking. Topics include faith, purpose, and relationships.",
     "organizer": "Elevation Ministry",
-    "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=70",
+    "image": "images/event-conference.jpg",
     "seats": 400,
     "price": "$75",
     "featured": true
@@ -39,7 +39,7 @@
     "state": "TX",
     "description": "An intimate worship night open to all Christian singles in the Dallas area. Expect Spirit-led praise, a short devotional, and time to connect over coffee afterward.",
     "organizer": "Watermark Church",
-    "image": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&q=70",
+    "image": "images/event-worship.jpg",
     "seats": 150,
     "price": "Free",
     "featured": true
@@ -54,7 +54,7 @@
     "state": "IL",
     "description": "A fun, relaxed social event for Christian singles in Chicago. Activities include icebreaker games, group discussions, and a casual dinner — a great way to meet other believers in the city.",
     "organizer": "Moody Singles Ministry",
-    "image": "https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=70",
+    "image": "images/event-social.jpg",
     "seats": 80,
     "price": "$20",
     "featured": false
@@ -69,7 +69,7 @@
     "state": "CA",
     "description": "A healing retreat for singles walking through life transitions — divorce recovery, grief, or simply seeking renewed purpose. Led by licensed Christian counselors and pastors.",
     "organizer": "New Season Ministries",
-    "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=70",
+    "image": "images/event-healing.jpg",
     "seats": 45,
     "price": "$199",
     "featured": false
@@ -84,7 +84,7 @@
     "state": "TN",
     "description": "A high-energy conference for Christian singles aged 22–38. Three days of worship, breakout sessions, and evening socials. Speakers include nationally recognized pastors and authors.",
     "organizer": "The Bridge Church",
-    "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=70",
+    "image": "images/event-rooted.jpg",
     "seats": 500,
     "price": "$99",
     "featured": false
@@ -99,7 +99,7 @@
     "state": "TX",
     "description": "Spend a Saturday serving the Houston community alongside other Christian singles. Projects include food pantry volunteering, neighborhood cleanup, and mentorship activities.",
     "organizer": "Grace Fellowship Houston",
-    "image": "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=70",
+    "image": "images/event-serve.jpg",
     "seats": 100,
     "price": "Free",
     "featured": false
@@ -114,7 +114,7 @@
     "state": "AZ",
     "description": "A powerful evening of contemporary worship led by local Christian musicians. Designed for singles who want to encounter God and leave refreshed and encouraged.",
     "organizer": "Anthem Church",
-    "image": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=70",
+    "image": "images/event-alive.jpg",
     "seats": 200,
     "price": "Free",
     "featured": false
@@ -129,7 +129,7 @@
     "state": "WA",
     "description": "A monthly brunch gathering for Christian singles in Seattle. Enjoy good food, meaningful conversation, and a short devotional to start your Saturday with intention.",
     "organizer": "Mars Hill Singles",
-    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=70",
+    "image": "images/event-brunch.jpg",
     "seats": 50,
     "price": "$15",
     "featured": false
@@ -144,7 +144,7 @@
     "state": "NY",
     "description": "An elegant annual gala for Christian singles and couples in NYC. Enjoy live music, dinner, dancing, and testimonies of lives changed by faith and community.",
     "organizer": "Redeemer Presbyterian NYC",
-    "image": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=70",
+    "image": "images/event-gala.jpg",
     "seats": 250,
     "price": "$55",
     "featured": false
@@ -159,7 +159,7 @@
     "state": "CA",
     "description": "A guided 5-mile coastal hike with prayer stations along the trail. Open to singles of all fitness levels. Ends with a beach bonfire, worship, and group prayer.",
     "organizer": "Rock Church San Diego",
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=70",
+    "image": "images/event-hike.jpg",
     "seats": 70,
     "price": "Free",
     "featured": false
@@ -174,7 +174,7 @@
     "state": "FL",
     "description": "Three days of teaching, worship, and connection focused on helping singles discover their God-given identity and purpose. Nationally renowned speakers and breakout sessions.",
     "organizer": "First Baptist Orlando",
-    "image": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=70",
+    "image": "images/event-anchored.jpg",
     "seats": 600,
     "price": "$89",
     "featured": false
@@ -189,7 +189,7 @@
     "state": "CO",
     "description": "A unique worship night blending music, spoken word, visual art, and dance — all in celebration of God's creativity. Open to all singles who love to express faith through art.",
     "organizer": "Mosaic Denver",
-    "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&q=70",
+    "image": "images/event-illuminate.jpg",
     "seats": 120,
     "price": "$10",
     "featured": false
@@ -204,7 +204,7 @@
     "state": "TN",
     "description": "A weekend retreat exclusively for single Christian men. Topics include identity, integrity, and purpose. Includes group Bible study, hiking, and open campfire discussions.",
     "organizer": "Iron Sharpens Iron",
-    "image": "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=70",
+    "image": "images/event-mens.jpg",
     "seats": 40,
     "price": "$175",
     "featured": false
@@ -219,7 +219,7 @@
     "state": "NC",
     "description": "A full-day event for single Christian women including worship, prayer, panel discussions, and a workshop on faith and emotional health. Brunch and lunch provided.",
     "organizer": "Elevation Church Women",
-    "image": "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=600&q=70",
+    "image": "images/event-women.jpg",
     "seats": 300,
     "price": "$35",
     "featured": false
@@ -234,7 +234,7 @@
     "state": "MA",
     "description": "A casual evening mixer for Christian singles in Boston. Held at a local community center with games, coffee, and guided conversation starters rooted in faith values.",
     "organizer": "Park Street Church Singles",
-    "image": "https://images.unsplash.com/photo-1543007631-283050bb3e8c?w=600&q=70",
+    "image": "images/event-lighthouse.jpg",
     "seats": 65,
     "price": "$12",
     "featured": false
@@ -249,7 +249,7 @@
     "state": "FL",
     "description": "A bilingual (English/Spanish) Sunday praise night for Christian singles in Miami. Featuring live worship, testimonies, and a short message followed by fellowship.",
     "organizer": "Iglesia Doral",
-    "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=70",
+    "image": "images/event-overflow.jpg",
     "seats": 180,
     "price": "Free",
     "featured": false
