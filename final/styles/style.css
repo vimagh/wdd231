@@ -9,6 +9,8 @@
   --forest-mid:   #2E7D5A;
   --forest-pale:  #E8F4EE;
   --gold:         #C49A3C;
+  --gold-dark:    #7A5C1A; /* darkened gold for use on light backgrounds — passes 4.5:1 on white/cream */
+  --gold-on-dark: #F0C84A; /* lightened gold for use on dark/forest backgrounds — passes 4.5:1 on forest */
   --gold-light:   #F5E6C0;
   --cream:        #FAF8F3;
   --ink:          #1C1C1C;
@@ -114,7 +116,7 @@ body {
 }
 
 .nav-logo-text em {
-  color: var(--gold);
+  color: var(--gold-on-dark);
   font-style: italic;
 }
 
@@ -138,7 +140,7 @@ body {
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
   color: white;
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.25);
 }
 
 .nav-links a[aria-current="page"]::after {
@@ -155,7 +157,7 @@ body {
 
 .nav-cta {
   background: var(--gold);
-  color: var(--ink);
+  color: #1C1C1C;
   font-weight: 700;
   padding: 0.5rem 1.1rem;
   border-radius: var(--radius-sm);
@@ -164,7 +166,7 @@ body {
 
 .nav-cta:hover {
   background: #d4aa4c;
-  color: var(--ink);
+  color: #1C1C1C;
 }
 
 /* Hamburger */
@@ -219,12 +221,12 @@ body {
 
 .mobile-nav a:hover,
 .mobile-nav a[aria-current="page"] {
-  background: rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.2);
   color: white;
 }
 
 .mobile-nav a[aria-current="page"] {
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--gold-on-dark);
   padding-left: calc(1.5rem - 3px);
 }
 
@@ -318,7 +320,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-on-dark);
   margin-bottom: 1.25rem;
 }
 
@@ -331,11 +333,11 @@ body {
   color: white;
 }
 
-.hero h1 em { color: var(--gold); font-style: italic; }
+.hero h1 em { color: var(--gold-on-dark); font-style: italic; }
 
 .hero-sub {
   font-size: 17px;
-  color: rgba(255,255,255,0.8);
+  color: #D4EDE0;
   max-width: 520px;
   margin: 0 auto 2.25rem;
   font-weight: 300;
@@ -692,7 +694,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   display: block;
   margin-bottom: 2px;
 }
@@ -728,7 +730,7 @@ body {
 
 .cta-band p {
   font-size: 16px;
-  color: rgba(255,255,255,0.75);
+  color: #D4EDE0;
   max-width: 480px;
   margin: 0 auto 2rem;
 }
@@ -744,7 +746,7 @@ body {
    PAGE HERO (inner pages)
    ================================================ */
 .page-hero {
-  background: linear-gradient(160deg, var(--forest) 0%, #174d37 100%);
+  background: var(--forest);
   color: white;
   padding: 4rem 1.25rem 3rem;
   text-align: center;
@@ -758,11 +760,11 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.page-hero h1 em { color: var(--gold); font-style: italic; }
+.page-hero h1 em { color: var(--gold-on-dark); font-style: italic; }
 
 .page-hero p {
   font-size: 16px;
-  color: rgba(255,255,255,0.75);
+  color: #D4EDE0;
   max-width: 540px;
   margin: 0 auto;
 }
@@ -864,7 +866,7 @@ body {
 
 .testimonial-quote::before {
   content: '\201C';
-  color: var(--gold);
+  color: var(--gold-dark);
   font-size: 1.5em;
   line-height: 0;
   vertical-align: -0.4em;
@@ -1105,7 +1107,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   margin-top: 0.85rem;
 }
 
@@ -1124,7 +1126,7 @@ body {
    ================================================ */
 .site-footer {
   background: var(--ink);
-  color: rgba(255,255,255,0.65);
+  color: #B8C4BE;
   padding: 3rem 1.25rem 2rem;
 }
 
@@ -1170,12 +1172,12 @@ body {
 .footer-col a {
   display: block;
   font-size: 14px;
-  color: rgba(255,255,255,0.6);
+  color: #B8C4BE;
   margin-bottom: 0.5rem;
   transition: color 0.2s;
 }
 
-.footer-col a:hover { color: var(--gold); }
+.footer-col a:hover { color: var(--gold-on-dark); }
 
 .footer-bottom {
   max-width: var(--max-w);
@@ -1190,7 +1192,7 @@ body {
   gap: 0.5rem;
 }
 
-.footer-bottom a { color: var(--gold); }
+.footer-bottom a { color: var(--gold-on-dark); }
 
 /* ================================================
    UTILITIES
