@@ -3,25 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit an Event — GatherFaith</title>
-  <meta name="description" content="Submit your faith-based event to GatherFaith and connect with Christian singles across the country. Listing is free for all churches and ministries." />
-  <meta name="author" content="Vimagh Solomon" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Submit an Event — GatherFaith" />
-  <meta property="og:description" content="List your retreat, conference, worship night, or social event on GatherFaith for free and reach Christian singles nationwide." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gatherfaith.org/submit.html" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80" />
-
+  <title>Event Submitted — GatherFaith</title>
+  <meta name="description" content="Your event has been submitted to GatherFaith for review. We'll be in touch within 24 hours." />
+  <meta name="author" content="Vims" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231B5E42'/><text y='24' x='6' font-size='22'>✟</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/submit.css" />
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- NAV -->
 <header class="site-header">
   <nav class="nav-inner" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="GatherFaith home">
@@ -32,7 +27,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="submit.html" class="btn-nav" aria-current="page">Submit Event</a></li>
+      <li><a href="submit.html" class="nav-cta">Submit Event</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
       <span></span><span></span><span></span>
@@ -44,150 +39,43 @@
   <a href="index.html">Home</a>
   <a href="events.html">Events</a>
   <a href="about.html">About</a>
-  <a href="submit.html" aria-current="page">Submit Event</a>
+  <a href="submit.html">Submit Event</a>
 </nav>
 
-<!-- MAIN -->
 <main id="main-content">
+  <div class="action-page">
+    <div class="action-icon" aria-hidden="true">✅</div>
+    <h1>Event Submitted!</h1>
+    <p>Thank you for listing your event on GatherFaith. We'll review your submission within 24 hours and reach out if we have any questions.</p>
 
-  <section class="page-hero" aria-labelledby="submit-heading">
-    <h1 id="submit-heading">Submit an <em>Event</em></h1>
-    <p>List your faith-based gathering on GatherFaith — completely free for all churches and ministries.</p>
-  </section>
+    <dl class="action-summary" id="submission-summary" aria-label="Your submission details">
+      <dt>Event Title</dt>
+      <dd id="sum-title">—</dd>
+      <dt>Organizer</dt>
+      <dd id="sum-org">—</dd>
+      <dt>Type</dt>
+      <dd id="sum-type">—</dd>
+      <dt>Date</dt>
+      <dd id="sum-date">—</dd>
+      <dt>Location</dt>
+      <dd id="sum-location">—</dd>
+      <dt>Contact Email</dt>
+      <dd id="sum-email">—</dd>
+    </dl>
 
-  <div class="form-section">
-    <div class="form-card">
-      <h2>Event Details</h2>
-      <p>Fill in the details below and we'll review your event within 24 hours. Fields marked <span class="req">*</span> are required.</p>
-
-      <form
-        action="form-action.html"
-        method="get"
-        id="submit-form"
-        novalidate
-      >
-        <!-- Organizer info -->
-        <fieldset style="border:none;padding:0;margin:0 0 0.5rem;">
-          <legend style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--forest);margin-bottom:1rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem;width:100%;">Organizer Information</legend>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="org-name">Organizer / Church Name <span class="req" aria-label="required">*</span></label>
-              <input type="text" id="org-name" name="org_name" required autocomplete="organization" placeholder="e.g. Crossroads Community Church" />
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Contact Email <span class="req" aria-label="required">*</span></label>
-              <input type="email" id="contact-email" name="contact_email" required autocomplete="email" placeholder="you@church.org" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="contact-phone">Contact Phone</label>
-            <input type="tel" id="contact-phone" name="contact_phone" autocomplete="tel" placeholder="(555) 000-0000" />
-            <span class="hint">Optional — for follow-up questions only</span>
-          </div>
-        </fieldset>
-
-        <!-- Event info -->
-        <fieldset style="border:none;padding:0;margin:0 0 0.5rem;">
-          <legend style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--forest);margin-bottom:1rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem;width:100%;">Event Information</legend>
-
-          <div class="form-group">
-            <label for="event-title">Event Title <span class="req" aria-label="required">*</span></label>
-            <input type="text" id="event-title" name="event_title" required placeholder="e.g. Restored Hearts Singles Retreat" />
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="event-type">Event Type <span class="req" aria-label="required">*</span></label>
-              <select id="event-type" name="event_type" required>
-                <option value="">Select a type…</option>
-                <option value="Retreat">Retreat</option>
-                <option value="Conference">Conference</option>
-                <option value="Worship Night">Worship Night</option>
-                <option value="Social">Social / Mixer</option>
-                <option value="Community Service">Community Service</option>
-                <option value="Outdoor">Outdoor / Activity</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="event-date">Event Date <span class="req" aria-label="required">*</span></label>
-              <input type="date" id="event-date" name="event_date" required />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="event-city">City <span class="req" aria-label="required">*</span></label>
-              <input type="text" id="event-city" name="event_city" required placeholder="e.g. Nashville" />
-            </div>
-            <div class="form-group">
-              <label for="event-state">State <span class="req" aria-label="required">*</span></label>
-              <select id="event-state" name="event_state" required>
-                <option value="">Select state…</option>
-                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-                <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
-                <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
-                <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
-                <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
-                <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
-                <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
-                <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
-                <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
-                <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
-                <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
-                <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
-                <option>WI</option><option>WY</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="event-price">Ticket Price</label>
-              <input type="text" id="event-price" name="event_price" placeholder="e.g. Free, $25, $99" />
-            </div>
-            <div class="form-group">
-              <label for="event-seats">Seats / Capacity</label>
-              <input type="number" id="event-seats" name="event_seats" min="1" placeholder="e.g. 100" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="event-description">Event Description <span class="req" aria-label="required">*</span></label>
-            <textarea id="event-description" name="event_description" required minlength="50" placeholder="Describe your event — what will attendees experience? Who is it for? What should they expect?"></textarea>
-            <span class="hint">Minimum 50 characters. Be specific — detailed descriptions get more sign-ups.</span>
-          </div>
-
-          <div class="form-group">
-            <label for="event-image-url">Event Image URL</label>
-            <input type="url" id="event-image-url" name="event_image_url" placeholder="https://example.com/event-photo.jpg" />
-            <span class="hint">Optional — a high-quality landscape photo works best (16:9 ratio).</span>
-          </div>
-        </fieldset>
-
-        <div class="form-submit">
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;">
-            Submit Event for Review →
-          </button>
-          <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:0.75rem;">
-            By submitting, you confirm this is a genuine faith-based event. We review all submissions within 24 hours.
-          </p>
-        </div>
-      </form>
+    <div class="action-buttons">
+      <a href="events.html" class="gf-btn gf-btn-forest">Browse Events</a>
+      <a href="submit.html" class="gf-btn gf-btn-outline-forest">Submit Another</a>
     </div>
   </div>
-
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="margin-bottom:0.75rem;display:inline-flex;">
-        <span class="nav-logo-icon" aria-hidden="true" style="width:28px;height:28px;font-size:14px;">✟</span>
-        <span class="nav-logo-text" style="font-size:1.15rem;">Gather<em>Faith</em></span>
+      <a href="index.html" class="footer-logo">
+        <span class="nav-logo-icon" aria-hidden="true">✟</span>
+        <span class="nav-logo-text">Gather<em>Faith</em></span>
       </a>
       <p>Connecting Christian singles to faith-based events and community across the nation.</p>
     </div>
@@ -212,6 +100,34 @@
   </div>
 </footer>
 
-<script type="module" src="scripts/app.js"></script>
+<script type="module">
+  import { setupHamburger } from './scripts/app.js';
+
+  const params = new URLSearchParams(window.location.search);
+
+  function set(id, key, fallback = '—') {
+    const el = document.getElementById(id);
+    if (el) el.textContent = params.get(key) || fallback;
+  }
+
+  set('sum-title', 'event_title');
+  set('sum-org', 'org_name');
+  set('sum-type', 'event_type');
+  set('sum-email', 'contact_email');
+
+  const rawDate = params.get('event_date');
+  if (rawDate) {
+    const d = new Date(rawDate + 'T00:00:00');
+    document.getElementById('sum-date').textContent = d.toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+  }
+
+  const city = params.get('event_city');
+  const state = params.get('event_state');
+  if (city || state) {
+    document.getElementById('sum-location').textContent = [city, state].filter(Boolean).join(', ');
+  }
+</script>
 </body>
 </html>

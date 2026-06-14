@@ -3,162 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GatherFaith — Find Christian Events Near You</title>
-  <meta name="description" content="GatherFaith connects Christian singles with faith-based events across the country — retreats, worship nights, conferences, and social gatherings." />
-  <meta name="author" content="Vimagh Solomon" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="GatherFaith — Find Christian Events Near You" />
-  <meta property="og:description" content="Discover faith-based events for Christian singles nationwide — retreats, worship nights, conferences, and community gatherings." />
+  <title>Browse Events — GatherFaith</title>
+  <meta name="description" content="Browse all upcoming Christian singles events across the United States. Filter by type, location, price, and more on GatherFaith." />
+  <meta name="author" content="Vims" />
+  <meta property="og:title" content="Browse Events — GatherFaith" />
+  <meta property="og:description" content="Find retreats, worship nights, conferences, and social events for Christian singles near you." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gatherfaith.org/" />
-  <meta property="og:image" content="https://vimagh.github.io/your-repo/images/event-conference.jpg" />
-
-  <!-- Favicon (SVG inline data URI) -->
+  <meta property="og:url" content="https://your-username.github.io/your-repo/events.html" />
+  <meta property="og:image" content="https://your-username.github.io/your-repo/images/event-conference.jpg" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231B5E42'/><text y='24' x='6' font-size='22'>✟</text></svg>" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/events.css" />
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- ═══════════════════════════════
-     HEADER / NAV
-     ═══════════════════════════════ -->
 <header class="site-header">
   <nav class="nav-inner" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="GatherFaith home">
       <span class="nav-logo-icon" aria-hidden="true">✟</span>
       <span class="nav-logo-text">Gather<em>Faith</em></span>
     </a>
-
-    <!-- Desktop links -->
     <ul class="nav-links" role="list">
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="events.html">Events</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html" aria-current="page">Events</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="submit.html" class="btn-nav">Submit Event</a></li>
+      <li><a href="submit.html" class="nav-cta">Submit Event</a></li>
     </ul>
-
-    <!-- Hamburger -->
-    <button
-      class="hamburger"
-      id="hamburger"
-      aria-expanded="false"
-      aria-controls="mobile-nav"
-      aria-label="Toggle navigation menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
     </button>
   </nav>
 </header>
 
-<!-- Mobile drawer -->
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-  <a href="index.html" aria-current="page">Home</a>
-  <a href="events.html">Events</a>
+  <a href="index.html">Home</a>
+  <a href="events.html" aria-current="page">Events</a>
   <a href="about.html">About</a>
   <a href="submit.html">Submit Event</a>
 </nav>
 
-<!-- ═══════════════════════════════
-     MAIN
-     ═══════════════════════════════ -->
 <main id="main-content">
 
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero-content">
-      <span class="hero-eyebrow">Faith · Community · Connection</span>
-      <h1 id="hero-heading">
-        Find Your People.<br />
-        Find Your <em>Events.</em>
-      </h1>
-      <p class="hero-sub">
-        GatherFaith brings Christian singles together through faith-based events across the country — retreats, worship nights, conferences, and more.
-      </p>
-      <div class="hero-actions">
-        <a href="events.html" class="btn btn-primary">Browse All Events</a>
-        <a href="submit.html" class="btn btn-outline">Submit an Event</a>
+  <section class="page-hero" aria-labelledby="events-page-heading">
+    <h1 id="events-page-heading">Browse <em>All Events</em></h1>
+    <p>Find faith-based gatherings for Christian singles happening across the country</p>
+  </section>
+
+  <div class="events-page-wrap">
+
+    <div class="saved-banner" id="saved-banner" role="status" aria-live="polite">
+      <span class="saved-banner-icon" aria-hidden="true">★</span>
+      <span class="saved-banner-msg">Save events by clicking ★ on any card.</span>
+    </div>
+
+    <section aria-label="Filter events" class="filters-bar">
+      <div class="filter-group">
+        <label for="filter-search">Search</label>
+        <input type="search" id="filter-search" placeholder="Keyword, city, organizer…" autocomplete="off" />
       </div>
-    </div>
-  </section>
+      <div class="filter-group">
+        <label for="filter-type">Event type</label>
+        <select id="filter-type">
+          <option value="">All types</option>
+          <option value="Retreat">Retreat</option>
+          <option value="Conference">Conference</option>
+          <option value="Worship Night">Worship Night</option>
+          <option value="Social">Social</option>
+          <option value="Community Service">Community Service</option>
+          <option value="Outdoor">Outdoor</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-state">State</label>
+        <select id="filter-state">
+          <option value="">All states</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-price">Price</label>
+        <select id="filter-price">
+          <option value="">Any price</option>
+          <option value="free">Free only</option>
+          <option value="paid">Paid events</option>
+        </select>
+      </div>
+      <div class="filter-group filter-checkbox-group">
+        <input type="checkbox" id="filter-saved" />
+        <label for="filter-saved">Saved only</label>
+      </div>
+      <button id="filter-reset" class="gf-btn gf-btn-reset">Reset</button>
+    </section>
 
-  <!-- Search bar -->
-  <section aria-label="Search events" class="search-bar-wrap">
-    <div class="search-bar" role="search">
-      <label for="hero-search" class="visually-hidden">Search events by keyword or city</label>
-      <input
-        type="search"
-        id="hero-search"
-        placeholder="Search by keyword or city…"
-        autocomplete="off"
-      />
-      <label for="hero-type" class="visually-hidden">Filter by event type</label>
-      <select id="hero-type" aria-label="Filter by type">
-        <option value="">All types</option>
-        <option value="Retreat">Retreat</option>
-        <option value="Conference">Conference</option>
-        <option value="Worship Night">Worship Night</option>
-        <option value="Social">Social</option>
-        <option value="Community Service">Community Service</option>
-        <option value="Outdoor">Outdoor</option>
-      </select>
-      <button id="hero-search-btn" aria-label="Search events">Search</button>
-    </div>
-  </section>
-
-  <!-- Featured Events -->
-  <section class="events-section" aria-labelledby="featured-heading">
-    <div class="section-head">
-      <h2 id="featured-heading">Upcoming Events</h2>
-      <p>Curated faith-based gatherings happening across the country</p>
-    </div>
-
-    <!-- Filter pills -->
     <div class="events-controls">
-      <p class="events-count" id="result-count" aria-live="polite"></p>
-      <div class="filter-pills" role="group" aria-label="Quick filters">
-        <button class="pill active" data-filter="All">All</button>
-        <button class="pill" data-filter="Retreat">Retreats</button>
-        <button class="pill" data-filter="Conference">Conferences</button>
-        <button class="pill" data-filter="Worship Night">Worship Nights</button>
-        <button class="pill" data-filter="Social">Socials</button>
-      </div>
+      <p class="events-count" id="events-count" aria-live="polite"></p>
     </div>
 
-    <div class="events-grid" id="featured-grid" aria-label="Events listing">
-      <p style="color:var(--muted);">Loading events…</p>
+    <div class="events-grid" id="events-grid" aria-label="Events listing">
+      <p class="loading-msg">Loading events…</p>
     </div>
 
-    <div class="text-center mt-2">
-      <a href="events.html" class="btn btn-forest">View All Events &rarr;</a>
-    </div>
-  </section>
-
-  <!-- CTA band -->
-  <section class="cta-band" aria-labelledby="cta-heading">
-    <div class="container">
-      <h2 id="cta-heading">Hosting a Faith-Based Event?</h2>
-      <p>List your retreat, conference, worship night, or social gathering — completely free. Reach Christian singles across the country.</p>
-      <a href="submit.html" class="btn btn-primary">Submit Your Event</a>
-    </div>
-  </section>
+  </div>
 
 </main>
 
-<!-- ═══════════════════════════════
-     FOOTER
-     ═══════════════════════════════ -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="margin-bottom:0.75rem;display:inline-flex;">
-        <span class="nav-logo-icon" aria-hidden="true" style="width:28px;height:28px;font-size:14px;">✟</span>
-        <span class="nav-logo-text" style="font-size:1.15rem;">Gather<em>Faith</em></span>
+      <a href="index.html" class="footer-logo">
+        <span class="nav-logo-icon" aria-hidden="true">✟</span>
+        <span class="nav-logo-text">Gather<em>Faith</em></span>
       </a>
       <p>Connecting Christian singles to faith-based events and community across the nation.</p>
     </div>
@@ -174,7 +132,7 @@
       <a href="events.html">Retreats</a>
       <a href="events.html">Conferences</a>
       <a href="events.html">Worship Nights</a>
-      <a href="events.html">Socials & Mixers</a>
+      <a href="events.html">Socials &amp; Mixers</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -183,18 +141,10 @@
   </div>
 </footer>
 
-<!-- Modal -->
-<div
-  class="modal-overlay"
-  id="modal-overlay"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="modal-title"
-  aria-hidden="true"
->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
   <div class="modal" id="modal-content"></div>
 </div>
 
-<script type="module" src="scripts/main.js"></script>
+<script type="module" src="scripts/events-page.js"></script>
 </body>
 </html>

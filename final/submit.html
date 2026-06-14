@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Submit an Event — GatherFaith</title>
   <meta name="description" content="Submit your faith-based event to GatherFaith and connect with Christian singles across the country. Listing is free for all churches and ministries." />
-  <meta name="author" content="Vimagh Solomon" />
-
-  <!-- Open Graph -->
+  <meta name="author" content="Vims" />
   <meta property="og:title" content="Submit an Event — GatherFaith" />
   <meta property="og:description" content="List your retreat, conference, worship night, or social event on GatherFaith for free and reach Christian singles nationwide." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gatherfaith.org/submit.html" />
-  <meta property="og:image" content="https://vimagh.github.io/your-repo/images/event-conference.jpg" />
-
+  <meta property="og:url" content="https://your-username.github.io/your-repo/submit.html" />
+  <meta property="og:image" content="https://your-username.github.io/your-repo/images/event-conference.jpg" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231B5E42'/><text y='24' x='6' font-size='22'>✟</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/submit.css" />
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- NAV -->
 <header class="site-header">
   <nav class="nav-inner" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="GatherFaith home">
@@ -32,7 +32,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="submit.html" class="btn-nav" aria-current="page">Submit Event</a></li>
+      <li><a href="submit.html" class="nav-cta" aria-current="page">Submit Event</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation menu">
       <span></span><span></span><span></span>
@@ -47,7 +47,6 @@
   <a href="submit.html" aria-current="page">Submit Event</a>
 </nav>
 
-<!-- MAIN -->
 <main id="main-content">
 
   <section class="page-hero" aria-labelledby="submit-heading">
@@ -60,16 +59,10 @@
       <h2>Event Details</h2>
       <p>Fill in the details below and we'll review your event within 24 hours. Fields marked <span class="req">*</span> are required.</p>
 
-      <form
-        action="form-action.html"
-        method="get"
-        id="submit-form"
-        novalidate
-      >
-        <!-- Organizer info -->
-        <fieldset style="border:none;padding:0;margin:0 0 0.5rem;">
-          <legend style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--forest);margin-bottom:1rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem;width:100%;">Organizer Information</legend>
+      <form action="form-action.html" method="get" id="submit-form" novalidate>
 
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Organizer Information</legend>
           <div class="form-row">
             <div class="form-group">
               <label for="org-name">Organizer / Church Name <span class="req" aria-label="required">*</span></label>
@@ -80,23 +73,19 @@
               <input type="email" id="contact-email" name="contact_email" required autocomplete="email" placeholder="you@church.org" />
             </div>
           </div>
-
           <div class="form-group">
             <label for="contact-phone">Contact Phone</label>
             <input type="tel" id="contact-phone" name="contact_phone" autocomplete="tel" placeholder="(555) 000-0000" />
-            <span class="hint">Optional — for follow-up questions only</span>
+            <span class="form-hint">Optional — for follow-up questions only</span>
           </div>
         </fieldset>
 
-        <!-- Event info -->
-        <fieldset style="border:none;padding:0;margin:0 0 0.5rem;">
-          <legend style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--forest);margin-bottom:1rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem;width:100%;">Event Information</legend>
-
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Event Information</legend>
           <div class="form-group">
             <label for="event-title">Event Title <span class="req" aria-label="required">*</span></label>
             <input type="text" id="event-title" name="event_title" required placeholder="e.g. Restored Hearts Singles Retreat" />
           </div>
-
           <div class="form-row">
             <div class="form-group">
               <label for="event-type">Event Type <span class="req" aria-label="required">*</span></label>
@@ -116,7 +105,6 @@
               <input type="date" id="event-date" name="event_date" required />
             </div>
           </div>
-
           <div class="form-row">
             <div class="form-group">
               <label for="event-city">City <span class="req" aria-label="required">*</span></label>
@@ -142,7 +130,6 @@
               </select>
             </div>
           </div>
-
           <div class="form-row">
             <div class="form-group">
               <label for="event-price">Ticket Price</label>
@@ -153,41 +140,35 @@
               <input type="number" id="event-seats" name="event_seats" min="1" placeholder="e.g. 100" />
             </div>
           </div>
-
           <div class="form-group">
             <label for="event-description">Event Description <span class="req" aria-label="required">*</span></label>
-            <textarea id="event-description" name="event_description" required minlength="50" placeholder="Describe your event — what will attendees experience? Who is it for? What should they expect?"></textarea>
-            <span class="hint">Minimum 50 characters. Be specific — detailed descriptions get more sign-ups.</span>
+            <textarea id="event-description" name="event_description" required minlength="50" placeholder="Describe your event — what will attendees experience? Who is it for?"></textarea>
+            <span class="form-hint">Minimum 50 characters. Be specific — detailed descriptions get more sign-ups.</span>
           </div>
-
           <div class="form-group">
             <label for="event-image-url">Event Image URL</label>
             <input type="url" id="event-image-url" name="event_image_url" placeholder="https://example.com/event-photo.jpg" />
-            <span class="hint">Optional — a high-quality landscape photo works best (16:9 ratio).</span>
+            <span class="form-hint">Optional — a high-quality landscape photo works best (16:9 ratio).</span>
           </div>
         </fieldset>
 
         <div class="form-submit">
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;">
-            Submit Event for Review →
-          </button>
-          <p style="font-size:13px;color:var(--muted);text-align:center;margin-top:0.75rem;">
-            By submitting, you confirm this is a genuine faith-based event. We review all submissions within 24 hours.
-          </p>
+          <button type="submit" class="gf-btn gf-btn-primary gf-btn-full">Submit Event for Review →</button>
+          <p class="form-note">By submitting, you confirm this is a genuine faith-based event. We review all submissions within 24 hours.</p>
         </div>
+
       </form>
     </div>
   </div>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="margin-bottom:0.75rem;display:inline-flex;">
-        <span class="nav-logo-icon" aria-hidden="true" style="width:28px;height:28px;font-size:14px;">✟</span>
-        <span class="nav-logo-text" style="font-size:1.15rem;">Gather<em>Faith</em></span>
+      <a href="index.html" class="footer-logo">
+        <span class="nav-logo-icon" aria-hidden="true">✟</span>
+        <span class="nav-logo-text">Gather<em>Faith</em></span>
       </a>
       <p>Connecting Christian singles to faith-based events and community across the nation.</p>
     </div>
